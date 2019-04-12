@@ -1,0 +1,45 @@
+<p>
+  courses works!
+</p>
+
+
+<ul class="nav nav-pills">  
+  <li class="active" ><a href="Map View"></a></li>
+  <li><a href=""></a>List View</li>
+</ul>
+<div> Ng switch case example.....
+<div  [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">Map View Content</div>
+  <div *ngSwitchCase="'list'">list View Content</div>
+  <div *ngSwitchDefault>other wise content</div>
+  End of Ng switch case example.....
+</div>
+ 
+
+<div>
+  ng for example 
+  <div>
+    <button id="btnAdd" (click)="AddClick()" >Add Button</button>
+  </div>
+  <ul *ngFor="let item of courses;index as i" >
+    <li>{{i }} - {{item.name}} </li>
+    <button id="btnRemove" (click)="RemoveBtn(item)">Remove Item</button>
+    <button id="btnUpdate" (click)="UpdateBtn(item)">Update Item</button>
+  </ul>
+</div>
+
+<div>
+    ng for example for trackby in ngfor loop 
+   <button (click)="LoadCourses()" >Load Courses</button>
+    <ul *ngFor="let item of coursesobj;trackBy:trackItem" >
+      <li>{{i }} - {{item.name}} </li>
+    
+    </ul>
+  </div>
+  <div>
+    track by 
+    <span>
+      {{task.assignee?.name}}
+    </span>
+  </div>
+</div>
