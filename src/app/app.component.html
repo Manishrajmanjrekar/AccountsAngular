@@ -1,30 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div>
-  <!-- <app-courses>
-
-  </app-courses> -->
-</div>
-<div>
-    <!-- <contact-form>
-      
-    </contact-form> -->
-</div>
-
-  <!-- <app-sales></app-sales> -->
-Sai
-
-<!-- <div>
-  <app-customer-info></app-customer-info>
-</div> -->
-<form #f="ngForm" (ngSubmit)="OnSubmit()">
-  <div>this is test ganesha....</div>
-    <div>
-  <div class="sss" #parent></div>
-  <button type="button" 
-                        (click)="addComponent()"
-                        class="btn btn-primary">Add Row </button>
+<div class="header-space"></div>
+<div class="row">
+  <div class="col-md-2">
+    <app-megamenu>
+    </app-megamenu>
   </div>
-  <div></div><br>
-  <button type="submit" class="btn btn-primary" >Submit</button>
-</form>
-<router-outlet></router-outlet>
+  <div class="col-md-8">
+    <router-outlet></router-outlet>
+  </div>
+</div>

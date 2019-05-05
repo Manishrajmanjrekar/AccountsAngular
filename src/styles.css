@@ -1,2 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'assets/css/primeng.css';
+@import 'assets/css/code.css';
+@import 'assets/css/site.css';
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
