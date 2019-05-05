@@ -133,8 +133,22 @@ export class MegamenuComponent {
                     ]
                 ]
             },
+            {
+                label: 'StockIn', icon: 'fa fa-fw fa-check',
+                items: [
+                    [
+                        {
+                            label:  'StockIn',
+                            items:  [
+                                        { label: 'Add StockIn', routerLink: ['stockin'] },                        
+                                        { label: 'StockIn List', routerLink: ['stockin'] }
+                                    ]
+                        }
+                    ]
+                ]
+            },
 
-
+            
         ];
     }
 }
