@@ -18,6 +18,7 @@ import { AddsalesComponent } from './addsales/addsales.component';
 import { Test1Component } from './test1/test1.component';
 import { Test2Component } from './test2/test2.component';
 import { Test3Component } from './test3/test3.component';
+import { VendorComponent } from './vendor/vendor.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { Test3Component } from './test3/test3.component';
     AddsalesComponent,
     Test1Component,
     Test2Component,
-    Test3Component
+    Test3Component,
+    VendorComponent
   ],
   imports: [
     BrowserModule,

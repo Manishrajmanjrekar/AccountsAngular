@@ -116,7 +116,25 @@ export class MegamenuComponent {
                         }
                     ]
                 ]
-            }
+            },
+            {
+                label: 'Vendor', icon: 'fa fa-fw fa-check',
+                items: [
+                    [
+                        {
+                            label: 'Vendor',
+                            items: [{ label: 'Add Vendor', routerLink: ['vendor'] },
+                             { label: 'update Vendor', routerLink: ['updateVendor'] }]
+                        },
+                        {
+                            label: 'Vendor List',
+                            items: [{ label: 'TV 2.1' }, { label: 'TV 2.2' }]
+                        }
+                    ]
+                ]
+            },
+
+
         ];
     }
 }
