@@ -20,6 +20,8 @@ import { Test2Component } from './test2/test2.component';
 import { Test3Component } from './test3/test3.component';
 import { VendorComponent } from './vendor/vendor.component';
 import { StockinComponent } from './stockin/stockin.component';
+import { VendorListComponent } from './vendor-list/vendor-list.component';
+import { GenericTableComponent } from './generic-table/generic-table.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { StockinComponent } from './stockin/stockin.component';
     Test2Component,
     Test3Component,
     VendorComponent,
-    StockinComponent
+    StockinComponent,
+    VendorListComponent,
+    GenericTableComponent
   ],
   imports: [
     BrowserModule,
