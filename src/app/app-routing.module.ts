@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CustomerInfoComponent } from './customer-info/customer-info.component';
 import { AppSalesComponent } from './app-sales/app-sales.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { AddsalesComponent } from './addsales/addsales.component';
@@ -10,9 +9,11 @@ import { Test3Component } from './test3/test3.component';
 import { VendorComponent } from './vendor/vendor.component';
 import { VendorListComponent } from './vendor-list/vendor-list.component';
 import { StockinComponent } from './stockin/stockin.component';
+import { StockinListComponent } from './stockin-list/stockin-list.component';
+import { CustomerInfoComponent } from './customer-info/customer-info.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
 
 const routes: Routes = [
-  { component: CustomerInfoComponent, path: 'customer' },
   { path: 'sales', component: AddsalesComponent },
   { path: 'test1', component: Test1Component },
   { path: 'test2', component: Test2Component },
@@ -20,6 +21,9 @@ const routes: Routes = [
   { path: 'vendor',component:VendorComponent },
   { path: 'vendorList',component:VendorListComponent },
   { path: 'stockin',component:StockinComponent },
+  { path: 'stockinList',component:StockinListComponent },
+  { path: 'customerInfo',component:CustomerInfoComponent },
+  { path: 'customerList',component:CustomerListComponent },
   { path: '**', redirectTo: 'sales'},
  
 ];

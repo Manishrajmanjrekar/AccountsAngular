@@ -21,7 +21,7 @@ export class MegamenuComponent {
                     [
                         {
                             label: 'Add Sales',
-                            items: [{ label: 'Add Sale', routerLink: ['sales'] }, { label: 'Customer', routerLink: ['customer'] }]
+                            items: [{ label: 'Add Sale', routerLink: ['sales'] }]
                         },
                         {
                             label: 'TV 2',
@@ -139,13 +139,26 @@ export class MegamenuComponent {
                             label:  'StockIn',
                             items:  [
                                         { label: 'Add StockIn', routerLink: ['stockin'] },                        
-                                        { label: 'StockIn List', routerLink: ['stockin'] }
+                                        { label: 'StockIn List', routerLink: ['stockinList'] }
                                     ]
                         }
                     ]
                 ]
             },
-
+            {
+                label: 'Customer', icon: 'fa fa-fw fa-check',
+                items: [
+                    [
+                        {
+                            label: 'Customer',
+                            items: [
+                                        { label: 'Add Customer', routerLink: ['customerInfo'] },
+                                        { label: 'Customer List', routerLink: ['customerList'] }
+                                   ]
+                        }
+                    ]
+                ]
+            },
             
         ];
     }

@@ -22,6 +22,8 @@ import { VendorComponent } from './vendor/vendor.component';
 import { StockinComponent } from './stockin/stockin.component';
 import { VendorListComponent } from './vendor-list/vendor-list.component';
 import { GenericTableComponent } from './generic-table/generic-table.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
+import { StockinListComponent } from './stockin-list/stockin-list.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { GenericTableComponent } from './generic-table/generic-table.component';
     VendorComponent,
     StockinComponent,
     VendorListComponent,
-    GenericTableComponent
+    GenericTableComponent,
+    CustomerListComponent,
+    StockinListComponent
   ],
   imports: [
     BrowserModule,

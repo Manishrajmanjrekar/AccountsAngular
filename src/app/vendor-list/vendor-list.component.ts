@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-vendor-list',
@@ -7,15 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VendorListComponent implements OnInit {
 
-  public submitted = false;
-  public searchModel = new SearchVm();   
+  public searchForm: FormGroup;
+  public submitted: boolean = false;
   public dataSource: VendorInfo[];
   public displayColInfo: any[];
-  public firstName : string;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.searchForm = this.fb.group({
+      vendorName: ['']
+    });
+
     this.displayColInfo = [
       { field: 'vendorId', header: 'Vendor Id' },
       { field: 'name', header: 'Vendor Name' },
@@ -29,26 +33,28 @@ export class VendorListComponent implements OnInit {
     this.dataSource = Vendors;
   }
 
+  get f(){ return this.searchForm.controls};
+
   performSearch(){
+    console.log('performSearch invoked');
     this.submitted = true;
+
+    if (this.searchForm.invalid) {
+      return;
+    }
+
     this.dataSource =  Vendors;
-     // filter data
-    if (this.searchModel.vendorName != undefined && this.searchModel.vendorName != '') {
-      this.dataSource =  this.dataSource.filter(item => item.name.toLowerCase().indexOf(this.searchModel.vendorName.toLowerCase()) !== -1);
+    // filter data
+    let vendorName = this.searchForm.value.vendorName;
+    if (vendorName != undefined && vendorName != '') {
+      this.dataSource =  this.dataSource.filter(item => item.name.toLowerCase().indexOf(vendorName.toLowerCase()) !== -1);
     }
 
     console.log(this.dataSource);
   }
 }
 
-// view models
-export class SearchVm {
-  customerName: string = '';
-  vendorName: string = '';
-  fromDate: string;
-  toDate: string;
-}
-
+// models
 export class VendorInfo{
   vendorId: number;
   name: string;
