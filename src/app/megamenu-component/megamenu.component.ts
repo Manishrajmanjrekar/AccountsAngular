@@ -21,7 +21,11 @@ export class MegamenuComponent {
                     [
                         {
                             label: 'Add Sales',
+<<<<<<< HEAD
                             items: [{ label: 'Add Sale', routerLink: ['sales'] }, { label: 'Customer', routerLink: ['customer'] }]
+=======
+                            items: [{ label: 'Add Sale', routerLink: ['sales'] }]
+>>>>>>> b55cb9e385fea723560743466debb27663eaa6f3
                         },
                         {
                             label: 'TV 2',
@@ -116,7 +120,54 @@ export class MegamenuComponent {
                         }
                     ]
                 ]
+<<<<<<< HEAD
             }
+=======
+            },
+            {
+                label: 'Vendor', icon: 'fa fa-fw fa-check',
+                items: [
+                    [
+                        {
+                            label: 'Vendor',
+                            items: [
+                                        { label: 'Add Vendor', routerLink: ['vendor'] },
+                                        { label: 'Vendor List', routerLink: ['vendorList'] }
+                                   ]
+                        }
+                    ]
+                ]
+            },
+            {
+                label: 'StockIn', icon: 'fa fa-fw fa-check',
+                items: [
+                    [
+                        {
+                            label:  'StockIn',
+                            items:  [
+                                        { label: 'Add StockIn', routerLink: ['stockin'] },                        
+                                        { label: 'StockIn List', routerLink: ['stockinList'] }
+                                    ]
+                        }
+                    ]
+                ]
+            },
+            {
+                label: 'Customer', icon: 'fa fa-fw fa-check',
+                items: [
+                    [
+                        {
+                            label: 'Customer',
+                            items: [
+                                        { label: 'Add Customer', routerLink: ['customerInfo'] },
+                                        { label: 'Customer List', routerLink: ['customerList'] }
+                                   ]
+                        }
+                    ]
+                ]
+            },
+            
+>>>>>>> b55cb9e385fea723560743466debb27663eaa6f3
         ];
     }
 }

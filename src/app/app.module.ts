@@ -18,6 +18,15 @@ import { AddsalesComponent } from './addsales/addsales.component';
 import { Test1Component } from './test1/test1.component';
 import { Test2Component } from './test2/test2.component';
 import { Test3Component } from './test3/test3.component';
+<<<<<<< HEAD
+=======
+import { VendorComponent } from './vendor/vendor.component';
+import { StockinComponent } from './stockin/stockin.component';
+import { VendorListComponent } from './vendor-list/vendor-list.component';
+import { GenericTableComponent } from './generic-table/generic-table.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
+import { StockinListComponent } from './stockin-list/stockin-list.component';
+>>>>>>> b55cb9e385fea723560743466debb27663eaa6f3
 
 @NgModule({
   declarations: [
@@ -30,7 +39,17 @@ import { Test3Component } from './test3/test3.component';
     AddsalesComponent,
     Test1Component,
     Test2Component,
+<<<<<<< HEAD
     Test3Component
+=======
+    Test3Component,
+    VendorComponent,
+    StockinComponent,
+    VendorListComponent,
+    GenericTableComponent,
+    CustomerListComponent,
+    StockinListComponent
+>>>>>>> b55cb9e385fea723560743466debb27663eaa6f3
   ],
   imports: [
     BrowserModule,
