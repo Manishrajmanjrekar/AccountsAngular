@@ -12,6 +12,7 @@ import { StockinComponent } from './stockin/stockin.component';
 import { StockinListComponent } from './stockin-list/stockin-list.component';
 import { CustomerInfoComponent } from './customer-info/customer-info.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
+import { SalesListComponent } from './Sales/sales-list/sales-list.component';
 
 const routes: Routes = [
   { path: 'sales', component: AddsalesComponent },
@@ -24,6 +25,8 @@ const routes: Routes = [
   { path: 'stockinList',component:StockinListComponent },
   { path: 'customerInfo',component:CustomerInfoComponent },
   { path: 'customerList',component:CustomerListComponent },
+  { path: 'saleslist',component:SalesListComponent },
+
   { path: '**', redirectTo: 'sales'},
  
 ];

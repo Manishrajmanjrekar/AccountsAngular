@@ -24,8 +24,8 @@ export class MegamenuComponent {
                             items: [{ label: 'Add Sale', routerLink: ['sales'] }]
                         },
                         {
-                            label: 'TV 2',
-                            items: [{ label: 'TV 2.1' }, { label: 'TV 2.2' }]
+                            label: 'Sales List',
+                            items: [{ label: 'Sales List' , routerLink: ['saleslist']}]
                         }
                     ]
                 ]

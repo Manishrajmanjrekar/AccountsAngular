@@ -24,6 +24,8 @@ import { VendorListComponent } from './vendor-list/vendor-list.component';
 import { GenericTableComponent } from './generic-table/generic-table.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { StockinListComponent } from './stockin-list/stockin-list.component';
+import { SalesListComponent } from './Sales/sales-list/sales-list.component';
+import { SalesEditComponent } from './Sales/sales-edit/sales-edit.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { StockinListComponent } from './stockin-list/stockin-list.component';
     VendorListComponent,
     GenericTableComponent,
     CustomerListComponent,
-    StockinListComponent
+    StockinListComponent,
+    SalesListComponent,
+    SalesEditComponent
   ],
   imports: [
     BrowserModule,
