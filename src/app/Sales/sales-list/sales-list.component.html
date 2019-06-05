@@ -10,11 +10,13 @@
     {{searchData}}
   </div>
   </div>
-
+<div>
+  <button type="button" id="btnclear" (click)="clearData()" >clear</button>
+</div>
   <div>
     List of vendor Names
     <div>
-       <select id="test" name ="test" [(ngModel)]="vendorId" >
+       <select id="test" name ="test" [(ngModel)]="vendorId" (change)="vendorChangeEvent()" >
          
          <option  *ngFor="let v of vendorList" value={{v.Id}} >
             {{v.Name}}
@@ -33,7 +35,7 @@
          {{item}}
         </th>
       </tr>
-      <tr *ngFor="let item of salesList">
+      <tr *ngFor="let item of gridData">
           <td *ngFor="let col of salesColumns">
             {{item[col]}}
           </td>

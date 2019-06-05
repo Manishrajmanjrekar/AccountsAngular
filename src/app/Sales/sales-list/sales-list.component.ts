@@ -15,7 +15,7 @@ export class SalesListComponent implements OnInit {
   vendorList: Array<Vendor>;
   salesList: SalesList[];
   salesColumns:Array<string>;
-
+ gridData:Array<SalesList>;
   constructor() {
 
 
@@ -28,6 +28,7 @@ export class SalesListComponent implements OnInit {
       const temp = this.salesList[0];
       this.salesColumns = Object.getOwnPropertyNames(temp);
       console.log(this.salesColumns);
+      this.gridData = this.salesList;
     }
 
   }
@@ -35,19 +36,30 @@ export class SalesListComponent implements OnInit {
   getVendorList(): Array<Vendor> {
     this.vendorList = new Array<Vendor>();
     for (let i = 0; i < 10; i++) {
-      this.vendorList.push({ Id: i, Name: "test" + i });
+      this.vendorList.push({ Id: i, Name: "vendor" + i });
     }
     return this.vendorList;
 
   }
 
+  public vendorChangeEvent(){
+    console.log(this.vendorId);
+    this.gridData =  this.salesList.filter(item => item.VendorId==this.vendorId);
+  }
 
-  getSalesByVendor(searchData:SalesList):Array<SalesList>{
+  clearData(){
+    this.vendorId=null;
+    //this.vendorList = this.getVendorList();
+    this.gridData = this.salesList;
     
+  }
+ 
+  getSalesByVendor(searchData:SalesList):Array<SalesList>{
+    console.log("event is called");
     this.salesList = new Array<SalesList>();
     for(let i =0;i<10;i++){
            this.salesList.push({vendorName:"vendor"+i,customerName :"customer"+i,
-           Price:7,Quantity:100,Total:1745 });
+           Price:7,Quantity:100,Total:1745,VendorId:i });
     }
 
     return this.salesList;

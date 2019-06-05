@@ -4,5 +4,5 @@ export class SalesList {
     public Price: number;
     public Quantity: number;
     public Total: number;
-  
+     public VendorId:number;
   }
