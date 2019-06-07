@@ -22,7 +22,7 @@ export class VendorListComponent implements OnInit {
 
     this.displayColInfo = [
       { field: 'vendorId', header: 'Vendor Id' },
-      { field: 'name', header: 'Vendor Name' },
+      { field: 'name', header: 'Vendor Name', enableEditLink: true, editRoute:'vendor', editField:'vendorId' },
       { field: 'address', header: 'Address' },
       { field: 'city', header: 'City' },
       { field: 'referredBy', header: 'Referred By' },

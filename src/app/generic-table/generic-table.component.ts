@@ -10,10 +10,12 @@ export class GenericTableComponent implements OnInit {
 
   @Input() dataSource: any[] = [];
   @Input() displayColInfo: any[] = [];
+  dataSourceKeys: any[];
 
   constructor() { }
 
   ngOnInit() {
+    this.dataSourceKeys = (this.dataSource && this.dataSource.length > 0) ?  Object.keys(this.dataSource[0]) : [];
   }
 
   ngOnChanges(changes: SimpleChanges) {

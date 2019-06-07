@@ -9,7 +9,12 @@
 </ng-template>
 
 <ng-template #dataPanel>
-    <table border="1" cellpadding="5">  
+  <ng-container *ngIf="displayColInfo?.length > 0; then selColGrid; else allColGrid">
+  </ng-container>    
+</ng-template>
+
+  <ng-template #selColGrid>
+      <table border="1" cellpadding="5">  
         <thead>
           <tr>
             <th *ngFor="let col of displayColInfo">
@@ -20,9 +25,34 @@
         <tbody>
         <tr *ngFor="let item of dataSource">
           <td *ngFor="let col of displayColInfo">
-            {{item[col.field]}}
-          </td>
+            <div *ngIf="!col.enableEditLink">
+              {{item[col.field]}}
+            </div>
+            <div *ngIf="col.enableEditLink">
+                <a [routerLink]="'/' + [col.editRoute] + '/' + item[col.editField]" >{{item[col.field]}}</a>
+            </div>
+          </td>          
         </tr>
       </table>
+    </ng-template>
+  
+
+<ng-template #allColGrid>
+  <table class="table" border="1">
+    <thead>
+      <tr>
+        <th *ngFor="let key of dataSourceKeys">
+          {{key}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of dataSource">
+        <td *ngFor="let key of dataSourceKeys">
+          {{row[key]}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </ng-template>
 
