@@ -28,8 +28,11 @@
             <div *ngIf="!col.enableEditLink">
               {{item[col.field]}}
             </div>
+            <!--<div *ngIf="col.enableEditLink">
+              <a [routerLink]="'/' + col.editRoute" [queryParams]="{id: item[col.editField]}">{{item[col.field]}}</a>
+            </div>-->
             <div *ngIf="col.enableEditLink">
-                <a [routerLink]="'/' + [col.editRoute] + '/' + item[col.editField]" >{{item[col.field]}}</a>
+              <a [routerLink]="'/' + col.editRoute + '/' + item[col.editField]">{{item[col.field]}}</a>
             </div>
           </td>          
         </tr>

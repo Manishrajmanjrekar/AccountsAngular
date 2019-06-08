@@ -125,7 +125,7 @@ export class MegamenuComponent {
                             label: 'Vendor',
                             items: [
                                         { label: 'Add Vendor', routerLink: ['vendor'] },
-                                        { label: 'Vendor List', routerLink: ['vendorList'] }
+                                        { label: 'Vendor List', routerLink: ['vendorlist'] }
                                    ]
                         }
                     ]
@@ -139,7 +139,7 @@ export class MegamenuComponent {
                             label:  'StockIn',
                             items:  [
                                         { label: 'Add StockIn', routerLink: ['stockin'] },                        
-                                        { label: 'StockIn List', routerLink: ['stockinList'] }
+                                        { label: 'StockIn List', routerLink: ['stockinlist'] }
                                     ]
                         }
                     ]
@@ -152,8 +152,8 @@ export class MegamenuComponent {
                         {
                             label: 'Customer',
                             items: [
-                                        { label: 'Add Customer', routerLink: ['customerInfo'] },
-                                        { label: 'Customer List', routerLink: ['customerList'] }
+                                        { label: 'Add Customer', routerLink: ['customerinfo'] },
+                                        { label: 'Customer List', routerLink: ['customerlist'] }
                                    ]
                         }
                     ]

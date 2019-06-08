@@ -1,0 +1,8 @@
+.hide{
+    opacity: 0 !important;
+    display:none;
+}
+.step{
+    opacity: 1;
+    transition: .5s ease-in-out all;
+}
