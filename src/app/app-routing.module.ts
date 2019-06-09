@@ -23,8 +23,10 @@ const routes: Routes = [
   { path: 'vendor/:id',component:VendorComponent },
   { path: 'vendorlist',component:VendorListComponent },
   { path: 'stockin',component:StockinComponent },
+  { path: 'stockin/:id',component:StockinComponent },
   { path: 'stockinlist',component:StockinListComponent },
   { path: 'customerinfo',component:CustomerInfoComponent },
+  { path: 'customerinfo/:id',component:CustomerInfoComponent },
   { path: 'customerlist',component:CustomerListComponent },
   { path: 'saleslist',component:SalesListComponent },
 

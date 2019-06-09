@@ -23,9 +23,9 @@ export class StockinListComponent implements OnInit {
     });
 
     this.displayColInfo = [
-      { field: 'stockinId', header: 'Stockin Id' },
+      //{ field: 'stockinId', header: 'Stockin Id' },
+      { field: 'simpleName', header: 'Simple Name', enableEditLink: true, editRoute:'stockin', editField:'stockinId' },
       { field: 'createdDate', header: 'Created Date' },
-      { field: 'simpleName', header: 'Simple Name' },
       { field: 'vendor', header: 'Vendor Name' },      
       { field: 'totalCount', header: 'Total Count' }
     ];

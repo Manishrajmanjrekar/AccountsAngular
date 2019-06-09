@@ -22,8 +22,8 @@ export class CustomerListComponent implements OnInit {
     });
 
     this.displayColInfo = [
-      { field: 'customerId', header: 'Customer Id' },
-      { field: 'fullName', header: 'Customer Name' },
+      //{ field: 'customerId', header: 'Customer Id' },
+      { field: 'fullName', header: 'Customer Name', enableEditLink: true, editRoute:'customerinfo', editField:'customerId' },
       { field: 'address', header: 'Address' },
       { field: 'email', header: 'Email' },
       { field: 'customerRefferedBy', header: 'Referred By' },
