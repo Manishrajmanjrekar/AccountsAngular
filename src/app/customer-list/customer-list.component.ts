@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {UIModel} from 'src/app/model/uimodel.model';
 
 @Component({
   selector: 'app-customer-list',
@@ -10,7 +11,7 @@ export class CustomerListComponent implements OnInit {
   public searchForm: FormGroup;
   public submitted: boolean = false;
   public dataSource: CustInfo[];
-  public displayColInfo: any[];
+  public displayColInfo: UIModel.ColInfo[];
 
   constructor(private fb: FormBuilder) { }
 
