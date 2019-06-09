@@ -23,16 +23,21 @@
           </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let item of dataSource">
+        <tr *ngFor="let row of dataSource">
           <td *ngFor="let col of displayColInfo">
             <div *ngIf="!col.enableEditLink">
-              {{item[col.field]}}
+              {{row[col.field]}}
             </div>
             <!--<div *ngIf="col.enableEditLink">
-              <a [routerLink]="'/' + col.editRoute" [queryParams]="{id: item[col.editField]}">{{item[col.field]}}</a>
+              <a [routerLink]="'/' + col.editRoute" [queryParams]="{id: row[col.editField]}">{{row[col.field]}}</a>
+            </div>-->
+            <!--<div *ngIf="col.enableEditLink">
+                <a [routerLink]="'/' + col.editRoute + '/' + item[col.editField]">{{item[col.field]}}</a>
             </div>-->
             <div *ngIf="col.enableEditLink">
-              <a [routerLink]="'/' + col.editRoute + '/' + item[col.editField]">{{item[col.field]}}</a>
+              <a [routerLink]="row['Url']">
+                {{row[col.field]}}
+              </a>
             </div>
           </td>          
         </tr>

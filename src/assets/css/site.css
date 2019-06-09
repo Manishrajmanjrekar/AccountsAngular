@@ -1224,3 +1224,12 @@ a {
     display: block;
   }
 }
+
+.hideMsg{
+    opacity: 0 !important;
+    display:none;
+}
+.msgTransition{
+    opacity: 1;
+    transition: .5s ease-in-out all;
+}

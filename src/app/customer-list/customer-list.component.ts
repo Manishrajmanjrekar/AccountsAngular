@@ -11,7 +11,7 @@ import {UIModel} from 'src/app/model/uimodel.model';
 export class CustomerListComponent implements OnInit {
   public searchForm: FormGroup;
   public submitted: boolean = false;
-  public dataSource: UIModel.CustInfo[];
+  public dataSource: UIModel.CustomerInfo[];
   public displayColInfo: UIModel.ColInfo[];
 
   constructor(private fb: FormBuilder) { }
@@ -23,7 +23,7 @@ export class CustomerListComponent implements OnInit {
 
     this.displayColInfo = [
       //{ field: 'customerId', header: 'Customer Id' },
-      { field: 'fullName', header: 'Customer Name', enableEditLink: true, editRoute:'customerinfo', editField:'customerId' },
+      { field: 'fullName', header: 'Customer Name', enableEditLink: true },
       { field: 'address', header: 'Address' },
       { field: 'email', header: 'Email' },
       { field: 'customerRefferedBy', header: 'Referred By' },

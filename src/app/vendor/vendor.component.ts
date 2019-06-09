@@ -23,7 +23,7 @@ export class VendorComponent implements OnInit {
   }
 
   ngOnInit() {        
-    let paramsChangeDetected = false;
+    let isParamRouteInvoked = false;
 
     // read route parameters
     /*this.activatedRoute
@@ -40,37 +40,59 @@ export class VendorComponent implements OnInit {
       .params
       .subscribe(params => {
         console.log('Regular Params:', params);
-        paramsChangeDetected = true;
+        isParamRouteInvoked = true;
         if (params){ 
           this.vendorId = Number(params["id"]) || 0;          
         }
-        this.loadForm(); 
+
+        if (this.vendorId > 0) {
+          this.loadEditForm(); 
+        }
+        else{
+          this.loadAddForm();
+        }
       });
 
-    if (!paramsChangeDetected){ // fresh request
-      this.loadForm();
+    if (!isParamRouteInvoked){
+      this.loadAddForm();
     }
   }
 
-  loadForm(){
+  loadAddForm(){
+    console.log('loadAddForm invoked');
+    this.createFormGroup();
+  }
+
+  loadEditForm(){
+    console.log('loadEditForm invoked');
     console.log(this.vendorId);
-    this.vendorDetails = null;
+
     this.getVendorDetails();
-
-    if (this.vendorId > 0 && (this.vendorDetails == null || this.vendorDetails.vendorId != this.vendorId)){
-      this.msg = "No details found for the Vendor Id: " + this.vendorId;
-      this.vendorId = 0;
-      this.showMsgAlert();
+    if (this.vendorDetails && this.vendorDetails.vendorId > 0){
+      this.createFormGroup();
     }
+    else{
+      this.msg = "No details found for Vendor Id: " + this.vendorId;
+      this.showMsgAlert(0);
+    }
+  }
 
-    /*this.vendorForm = this.formBuilder.group({
+  // create formgroup using formbuilder
+  createFormGroup(){
+    console.log('createFormGroup invoked');
+    if (this.vendorDetails == null)
+      this.vendorDetails = new UIModel.VendorInfo();
+
+    /*
+    this.vendorForm = this.formBuilder.group({
       name: ['', Validators.required],
       address: ['', Validators.required],
       city: ['', Validators.required],
       referredBy: ['', Validators.required],
       mobile: ['', [Validators.required, Validators.pattern(this.mobilePattern)]],
       alternateMobile: ['', [Validators.pattern(this.mobilePattern)]],
-    });*/
+    });
+    */
 
     this.vendorForm = this.formBuilder.group({
       name: [this.vendorDetails.name, Validators.required],
@@ -94,29 +116,25 @@ export class VendorComponent implements OnInit {
         return;
     }
 
-    //alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.vendorForm.value))
-    this.msg = "Vendor saved successfully.<br/>" + JSON.stringify(this.vendorForm.value);
-    this.showMsgAlert();
-  }
-  
-
-  showMsgAlert(){
-    this.showMsg = true; 
-
-    setTimeout(()=>{ 
-      this.showMsg = false;
-      //this.msg = '';
-    }, 1500);
-    
-  }
+    this.msg = "Vendor saved successfully." + "<br/>" + JSON.stringify(this.vendorForm.value);
+    this.showMsgAlert(2000);
+  }  
 
   getVendorDetails(){
     if (this.vendorId > 0) {
       this.vendorDetails = UIModel.Vendors.filter(x => x.vendorId == this.vendorId)[0];
     }
+  }
 
-    if (this.vendorDetails == null) {
-      this.vendorDetails = new UIModel.VendorInfo();
+  showMsgAlert(timeInterval: number){
+    this.showMsg = true; 
+
+    if (timeInterval > 0) {
+      setTimeout(()=>{ 
+        this.showMsg = false;
+        this.msg = '';
+      }, timeInterval);
     }
   }
+
 }
