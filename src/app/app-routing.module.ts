@@ -32,11 +32,22 @@ const routes: Routes = [
   { path: '**', redirectTo: 'sales'}
 =======
   { path: 'vendor',component:VendorComponent },
-  { path: 'vendorList',component:VendorListComponent },
+  { path: 'vendor/:id',component:VendorComponent },
+  { path: 'vendorlist',component:VendorListComponent },
   { path: 'stockin',component:StockinComponent },
+<<<<<<< HEAD
   { path: 'stockinList',component:StockinListComponent },
   { path: 'customerInfo',component:CustomerInfoComponent },
   { path: 'customerList',component:CustomerListComponent },
+=======
+  { path: 'stockin/:id',component:StockinComponent },
+  { path: 'stockinlist',component:StockinListComponent },
+  { path: 'customerinfo',component:CustomerInfoComponent },
+  { path: 'customerinfo/:id',component:CustomerInfoComponent },
+  { path: 'customerlist',component:CustomerListComponent },
+  { path: 'saleslist',component:SalesListComponent },
+
+>>>>>>> 0966cd121840d22123b36fd26576e44ccb6ba73a
   { path: '**', redirectTo: 'sales'},
  
 >>>>>>> b55cb9e385fea723560743466debb27663eaa6f3
